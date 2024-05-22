@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace ClassSystemProject
 {
+    //Продукт
     abstract class Product
     {
         public string Name;
-        public int SelectNumber;
+        public int Number;
 
     }
 }
+ 

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassSystemProject
 {
+    //Заказ
     class Order<TDelivery, TStruct> where TDelivery : Delivery
     {
         public TDelivery Delivery;

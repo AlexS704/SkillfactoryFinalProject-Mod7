@@ -3,36 +3,85 @@
   <Class Name="ClassSystemProject.Delivery">
     <Position X="10.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAIAAEAA=</HashCode>
       <FileName>Delivery.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassSystemProject.HomeDelivery" Collapsed="true">
-    <Position X="13.75" Y="4" Width="1.5" />
+    <Position X="6.75" Y="3.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>HomeDelivery.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassSystemProject.Order&lt;TDelivery, TStruct&gt;" Collapsed="true">
-    <Position X="4.75" Y="1.75" Width="1.5" />
+    <Position X="8.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAgAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
       <FileName>Order.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassSystemProject.PickPointDelivery" Collapsed="true">
-    <Position X="10.5" Y="3.75" Width="1.5" />
+    <Position X="4.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PickPointDelivery.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassSystemProject.ShopDelivery" Collapsed="true">
-    <Position X="7" Y="3.75" Width="1.5" />
+    <Position X="1.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ShopDelivery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClassSystemProject.Confectionery" Collapsed="true">
+    <Position X="16" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAEAAAABgAA=</HashCode>
+      <FileName>Confectionery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClassSystemProject.DeliveryRegion" Collapsed="true">
+    <Position X="10.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DeliveryArea.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClassSystemProject.Product" Collapsed="true">
+    <Position X="16" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClassSystemProject.RegisteredUser" Collapsed="true">
+    <Position X="10.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RegisteredUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClassSystemProject.ShoppingCart" Collapsed="true">
+    <Position X="8.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ShoppingCart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClassSystemProject.SoftToy" Collapsed="true">
+    <Position X="16" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAMAAAAAAEA=</HashCode>
+      <FileName>SoftToy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClassSystemProject.TruckingCompanyDelivery" Collapsed="true">
+    <Position X="14" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TruckingCompanyDelivery.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

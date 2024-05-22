@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace ClassSystemProject
 {
-   abstract class Delivery : DeliveryArea
+   //Доставка
+    public class Delivery
     {
-        public string Address;
+        private string _addressClient;
+        private string _nameClient;
+        private string _orderClient;
+
     }
 }

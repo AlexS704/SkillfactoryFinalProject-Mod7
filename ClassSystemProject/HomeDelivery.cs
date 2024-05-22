@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace ClassSystemProject
 {
+    //Доставка на дом
     class HomeDelivery : Delivery
     {
-        /* ... */
+           
+
+        public string nameClient;
+             
+     
+        
+
+
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassSystemProject
 {
+    //Доставка грузовым автомобилем
     internal class TruckingCompanyDelivery : Delivery
     {
 

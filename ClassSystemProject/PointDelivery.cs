@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace ClassSystemProject
 {
-    internal class RegisteredUser
+    //Пункт доставки
+    class PointDelivery : Delivery
     {
+        /* ... */
     }
 }
