@@ -9,35 +9,31 @@ namespace ClassSystemProject
    //Доставка
     abstract class Delivery
     {
-        public string Adress;
-        public string DeliveryTime;
+        public (string Country, string City, string Street, string HouseNumber) Adress;
+        public (string Month, byte Day) DeliveryTime;
 
-        static double gasMileage;
-        static double theCcostOfGasoline;
-        double costOfTheMile = gasMileage * theCcostOfGasoline;
-
-
-
-        public (string bicycleСourier, string footСourier, string transportDelivery, string deliveryByAir, string selfDelivery) TypeDelevery;
-
+        static double gasMileage = 15;
+        static double theCostOfGasoline = 55;
         
+        //расчет расхода на доставку автотранспортом на 1 км пути.
+        //4 - коэффициент по стандартам на затрату расходов ГСМ и ремонт подвески + время на перевозку.
+        double costOfTheMile = (gasMileage * theCostOfGasoline)/100 * 4;
+
+        public static (string bicycleСourier, string footСourier, string transportDelivery, string deliveryByAir, string selfDelivery) TypeDelevery;
+
+
+
+
 
         //расчет стоимости
-        public static double BillDeliveryStability()
+        public static double BillDeliveryStability(double costOfTheMile)
         {
-            if UserDelevery == TypeDelevery.Item5
+            string userDelivery;          
+            
+            if (userDelivery = TypeDelevery.selfDelivery)
             {
                 return 0;
             }
-            
-            if UserDelevery == TypeDelevery.Item1
-            {
-
-
-
-            }
-
-            
 
         }
     }

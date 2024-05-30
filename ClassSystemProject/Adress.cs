@@ -16,7 +16,7 @@ namespace ClassSystemProject
 
        
 
-         //принимаем данные об адресе и передаем в поля       
+        //принимаем данные об адресе и передаем в поля       
         public Address(string country, string city, string street, string houseNumber)
         {
             _country = country;
