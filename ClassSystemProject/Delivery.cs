@@ -12,45 +12,42 @@ namespace ClassSystemProject
     {
         public (string Country, string City, string Street, string HouseNumber) Adress;
         public (string Month, byte Day) DeliveryTime;
+        public double DeliveryCost;
 
-        static double gasMileage = 15; //на 100км пути
-        static double theCostOfGasoline = 55;
-        static double bicycleCourierFare = 10; //ставка на 1км
-        static double planeFare = 10; //ставка на 1км
-        static double distance; //в км ---> это надо откуда-то получать
-
+        private static double _gasMileage = 15; //на 100км пути
+        private static double _theCostOfGasoline = 55;
+        private static double _bicycleCourierFare = 10; //ставка на 1км
+        private static double _planeFare = 10; //ставка на 1км
+        
         //расчет расхода на доставку автотранспортом на 1 км пути.
         //4 - коэффициент по стандартам на затрату расходов ГСМ и ремонт подвески + время на перевозку.
         
-        double costOfTheMile = (gasMileage * theCostOfGasoline)/100 * 4;
+        private double _costOfTheMile = (_gasMileage * _theCostOfGasoline)/100 * 4;
 
-        public static (string bicycleСourier, string footСourier, string transportDelivery, string deliveryByAir, string selfDelivery) TypeDelevery;
-
-
+        private static (string bicycleСourier, string footСourier, string transportDelivery, string deliveryByAir, string selfDelivery) _typeDelevery;
 
 
-
-        //расчет стоимости  ---> скорее всего здесь нужен абстрактный метод, а реализацию в своем классе
-        public static double BillDeliveryStability(double costOfTheMile, string userDelivery)
+        //расчет стоимости 
+        private static double _billDeliveryStability(double distance, string UserSelectedDelivery)
         {
-                                   
-            if (userDelivery == TypeDelevery.bicycleСourier)
+
+            if (UserSelectedDelivery == _typeDelevery.bicycleСourier)
             {
                 return distance * bicycleCourierFare;
 
             }
 
-            if (userDelivery == TypeDelevery.footСourier)
+            if (UserSelectedDelivery == _typeDelevery.footСourier)
             {
                 return 0; //заглушка
             }
 
-            if (userDelivery == TypeDelevery.transportDelivery)
+            if (UserSelectedDelivery == _typeDelevery.transportDelivery)
             {
                 return 0; //заглушка
             }
 
-            if (userDelivery == TypeDelevery.deliveryByAir)
+            if (UserSelectedDelivery == _typeDelevery.deliveryByAir)
             {
                 return 0; //заглушка
             }
@@ -58,5 +55,40 @@ namespace ClassSystemProject
 
             return 0;
         }
+
+        public Delivery(double distance, string UserSelectedDelivery)
+        {
+            if (UserSelectedDelivery == _typeDelevery.selfDelivery)
+            {
+                _billDeliveryStability(distance, UserSelectedDelivery);
+                return;
+            }
+
+
+            if (UserSelectedDelivery == _typeDelevery.bicycleСourier)
+            {
+                _billDeliveryStability(distance, UserSelectedDelivery);
+                return;
+            }
+
+            if (UserSelectedDelivery == _typeDelevery.footСourier)
+            {
+                _billDeliveryStability(distance, UserSelectedDelivery);
+                return;
+            }
+
+            if (UserSelectedDelivery == _typeDelevery.transportDelivery)
+            {
+                _billDeliveryStability(distance, UserSelectedDelivery);
+                return;
+            }
+
+            if (UserSelectedDelivery == _typeDelevery.deliveryByAir)
+            {
+                _billDeliveryStability(distance, UserSelectedDelivery);
+                return;
+            }
+        }
+
     }
 }
