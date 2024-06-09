@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.Metrics;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,11 +12,35 @@ namespace ClassSystemProject
    
     abstract class Delivery
     {
-        public string Address;
-        public double Distance;
-        public double DateTimeDelivery;
+        public (string Country, string City, string Street, string NumberHome) Address;
+        public double Distance; //в км
+        public DateTime DateDelivery { get; set; }  //формат: год, день, месяц, час, минуты, секунды
+        public string Client;
+
+        public Delivery(DateTime deliveryDate)
+        {
+            DateDelivery = deliveryDate;
+        }
+
+        protected void ValidateDeliveryDate(DateTime deliveryDate)
+        {
+            if (deliveryDate < DateTime.MinValue || deliveryDate > DateTime.MaxValue)
+            {
+                throw new ArgumentOutOfRangeException("Некорректная дата доставки");
+            }
+        }
+       
 
 
         public abstract void СostСalculation();
+
+
+        //public Delivery(string Client, double Distance, string Address, double DateTimeDelivery)
+        //{
+        //    this.Client = Client;
+        //    this.Distance = Distance;
+        //    this.Address = Address;
+        //    this.DateTimeDelivery = DateTimeDelivery;
+        //}
     }
 }
