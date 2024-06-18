@@ -14,12 +14,20 @@ namespace ClassSystemProject
     {
         public (string Country, string City, string Street, string NumberHome) Address;
         public double Distance; //в км
-        public DateTime DateDelivery { get; set; }  //формат: год, день, месяц, час, минуты, секунды
+        public DateTime DateDelivery { get; private set; }  //формат: год, день, месяц, час, минуты, секунды
         public string Client;
+
+        public abstract void SetDeliveryDate(DateTime deliveryDate);
+
+
+        public Delivery()
+        {
+            SetDeliveryDate(DateTime.Now);
+        }
 
         public Delivery(DateTime deliveryDate)
         {
-            DateDelivery = deliveryDate;
+            SetDeliveryDate(deliveryDate);
         }
 
         protected void ValidateDeliveryDate(DateTime deliveryDate)
@@ -29,6 +37,7 @@ namespace ClassSystemProject
                 throw new ArgumentOutOfRangeException("Некорректная дата доставки");
             }
         }
+
        
 
 
