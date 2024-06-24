@@ -13,8 +13,26 @@ namespace ClassSystemProject
         string Surname = "Петров";
         int Age = 18; //добавить проверку на 0
 
-       
-          public HomeDelivery(string country, string city, string street, string numberHouse, DateTime DateDelivery) : base(DateDelivery)
+
+        public override void SetDeliveryDate(DateTime deliveryDate)
+        {
+            ValidateDeliveryDate(deliveryDate);
+            DateDelivery = deliveryDate;
+        }
+
+
+        //!!
+        public override void СostСalculation()
+        {
+            throw new NotImplementedException();
+        }
+
+        //Вызываем конструкторы базового класса
+        public HomeDelivery() : base(DateTime.Now) { }
+
+        public HomeDelivery(DateTime DateDelivery) : base(DateDelivery) { }
+
+        public HomeDelivery(string country, string city, string street, string numberHouse) : base(DateDelivery) //исправить
         {
             Address.Country = country;
             Address.City = city;
