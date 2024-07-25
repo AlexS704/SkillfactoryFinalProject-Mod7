@@ -7,10 +7,16 @@ using System.Threading.Tasks;
 namespace ClassSystemProject
 {
     //Продукт
-    abstract class Product
+    abstract class Product<T>
     {
-        public string Name;
-        public int Number;
+        public string Name { get; set; }
+        public decimal Price { get; set; }
+        public T Numbers;
+
+        public void Sell ()
+        {
+        
+        }
 
     }
 }
