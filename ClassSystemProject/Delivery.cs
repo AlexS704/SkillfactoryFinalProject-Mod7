@@ -14,14 +14,35 @@ namespace ClassSystemProject
     {
         public (string Country, string City, string Street, string NumberHome) Address;
         public double Distance; //в км
-        public DateTime DateDelivery { get; set; }  //формат: год, день, месяц, час, минуты, секунды
+        
+        // Свойство для установки даты доставки.
+        public DateTime DateDelivery { get; protected set; }  //формат: год, день, месяц, час, минуты, секунды
         public string Client;
 
-        public Delivery(DateTime deliveryDate)
+
+
+        // Абстрактный метод для установки даты доставки.
+        public abstract void SetDeliveryDate(DateTime deliveryDate);
+
+
+
+        // Конструктор по умолчанию, который устанавливает текущую дату доставки.
+        public Delivery()
         {
-            DateDelivery = deliveryDate;
+            SetDeliveryDate(DateTime.Now);
         }
 
+        // Конструктор с параметрами, который позволяет установить пользовательскую дату доставки.
+        public Delivery(DateTime deliveryDate)
+        {
+            SetDeliveryDate(deliveryDate);
+        }
+
+        public Delivery((string Country, string City, string Street, string NumberHome) Address, double Distance, string Client) { }
+
+
+
+        // Метод для проверки корректности даты доставки.
         protected void ValidateDeliveryDate(DateTime deliveryDate)
         {
             if (deliveryDate < DateTime.MinValue || deliveryDate > DateTime.MaxValue)
@@ -29,9 +50,8 @@ namespace ClassSystemProject
                 throw new ArgumentOutOfRangeException("Некорректная дата доставки");
             }
         }
-       
-
-
+         
+        // Метод расчета стоимости доставки (нет полей).
         public abstract void СostСalculation();
 
 
