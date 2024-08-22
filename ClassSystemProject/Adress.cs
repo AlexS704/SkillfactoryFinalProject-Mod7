@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Основной класс
+//Класс для хранения адреса клиента или пункта доставки.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Основной класс
+//Класс, описывающий процесс доставки заказа.
+//Может включать информацию о времени, стоимости и способе доставки.
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.Metrics;
 using System.Globalization;

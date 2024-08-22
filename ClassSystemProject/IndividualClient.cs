@@ -1,4 +1,6 @@
-﻿using System;
+﻿//Основной класс
+//Класс для представления индивидуального клиента, который делает заказ.
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

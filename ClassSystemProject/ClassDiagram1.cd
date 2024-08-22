@@ -3,14 +3,14 @@
   <Class Name="ClassSystemProject.Delivery">
     <Position X="10.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABAAAAAAAAAAAAAAAIAAAAAAAAAAAIBCAAAAAAAAAAQ=</HashCode>
+      <HashCode>ABAAAAAAAAAAAAAABIAAAAAAAAAAAIBCAAAAAAAAAAQ=</HashCode>
       <FileName>Delivery.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassSystemProject.HomeDelivery">
     <Position X="6.75" Y="3.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAEAAAAQABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAQAAABEAAAAQABAAAAIAAAAAAAAAAAAA=</HashCode>
       <FileName>HomeDelivery.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -64,7 +64,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ClassSystemProject.ShoppingCart" Collapsed="true">
-    <Position X="8.25" Y="5.75" Width="1.5" />
+    <Position X="9" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ShoppingCart.cs</FileName>
