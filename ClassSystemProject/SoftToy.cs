@@ -9,10 +9,47 @@ namespace ClassSystemProject
     //Мягкая игрушка
     internal class SoftToy : Product
     {
-        public (string catAndGuitar, string sailorCat, string bullyDog) toyList;
+              
+        private int QuantityCatAndGuitar = 12;
+        private int QuantitySailorCat = 16;
+        private int QuantityBullyDog = 9;
+        
+        //генерация GUID
+        static Guid catAndGuitarID = Guid.NewGuid();
+        static Guid sailorCatID = Guid.NewGuid();
+        static Guid bullyDogID = Guid.NewGuid();
 
-        public int NumberCatAndGuitar = 12;
-        public int NumberSailorCat = 16;
-        public int NumberBullyDog = 9;
+        //сохранение GUID в словаре
+       private Dictionary<SoftToys, Guid> softToysIds = new Dictionary<SoftToys, Guid>
+                {
+                    {SoftToys.CatAndGuitar, catAndGuitarID},
+                    {SoftToys.SailorCat, sailorCatID},
+                    {SoftToys.BullyDog, bullyDogID},
+                };
+
+
+        private void OutputID()
+        {
+          //Guid selectedToyId = softToysIds[SoftToys.CatAndGuitar];
+           
+        }
+        public int CheckAvailableQuantity (int quantity, int result)
+        {
+            bool CheckQuantity;
+
+            //реализация
+           
+            return result;
+        }
+
+        
+
+    }
+
+    public enum SoftToys
+    {
+        CatAndGuitar,
+        SailorCat,
+        BullyDog
     }
 }

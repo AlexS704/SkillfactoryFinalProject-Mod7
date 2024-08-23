@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 namespace ClassSystemProject
 {
     //Продукт
-    abstract class Product
+    class Product
     {
-        public int IdProduct { get; set; }
+        protected int IdProduct;
 
-        public string NameProduct;
-        public decimal Price { get; private set; }
+        protected string NameProduct;
+        protected decimal Price { get; private set; }
 
-        public string TypeProduct;
+        protected string TypeProduct;
 
         public void Sell ()
         {
