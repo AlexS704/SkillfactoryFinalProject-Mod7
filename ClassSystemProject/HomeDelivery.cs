@@ -10,37 +10,10 @@ namespace ClassSystemProject
     //Доставка на дом
     class HomeDelivery : Delivery
     {
+        //перенести в класс IndividualClient либо связать с классом
         string Name = "Иван";
-        string Surname = "Петров";
-        private int age = 18; //добавить проверку на 0
-
-
-        public override void SetDeliveryDate(DateTime deliveryDate)
-        {
-            ValidateDeliveryDate(deliveryDate);
-            DateDelivery = deliveryDate;
-        }
-
-
-        //!!
-        public override void СostСalculation()
-        {
-            throw new NotImplementedException();
-        }
-
-        //Вызываем конструкторы базового класса
-        public HomeDelivery() : base(DateTime.Now) { }
-
-        public HomeDelivery(DateTime DateDelivery) : base(DateDelivery) { }
-
-        public HomeDelivery(string country, string city, string street, string numberHouse) : base(DateDelivery) //исправить
-        {
-            Address.Country = country;
-            Address.City = city;
-            Address.Street = street;
-            Address.NumberHome = numberHouse;
-                        
-        }
+        string Surname = "Иванов";
+        int age = 18;
 
         public int Age
         {
@@ -65,13 +38,49 @@ namespace ClassSystemProject
 
         }
 
+        private readonly decimal _homeDeliveryFee;
+
+        public HomeDelivery(decimal homeDeliveryFee)
+        {
+            _homeDeliveryFee = homeDeliveryFee;
+        }
+
+     
+        public override decimal СostСalculation()
+        {
+          
+            return base.СostСalculation() + _homeDeliveryFee;
+        }
+
+        public override void SetDeliveryDate(DateTime deliveryDate)
+        {
+            ValidateDeliveryDate(deliveryDate);
+            DateDelivery = deliveryDate;
+        }
+
+
+        
+        //Вызываем конструкторы базового класса
+        public HomeDelivery() : base(DateTime.Now) { }
+
+        public HomeDelivery(DateTime DateDelivery) : base(DateDelivery) { }
+
+        public HomeDelivery(string country, string city, string street, string numberHouse) : base(DateDelivery)
+        {            
+            Address.Country = country;
+            Address.City = city;
+            Address.Street = street;
+            Address.NumberHome = numberHouse;
+                        
+        }
+
+        
+
         public HomeDelivery(string name, string surname, int age) 
         {
             name = Name;
             surname = Surname;
             
-
-
         }
      
         

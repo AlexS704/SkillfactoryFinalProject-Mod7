@@ -12,21 +12,28 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ClassSystemProject
 {
-   
-    abstract class Delivery
+    enum TypeDelivery
+    {
+        HomeDelivery,
+        PointDelivery,
+        MarketplaceDelivery
+    }
+    
+    public abstract class Delivery
     {
         public (string Country, string City, string Street, string NumberHome) Address;
-        public double Distance; //в км
-        
-        // Свойство для установки даты доставки.
-        public DateTime DateDelivery { get; protected set; }  //формат: год, день, месяц, час, минуты, секунды
-        public string Client;
+        public decimal Distance; //в км             
+        private decimal _primeRate = 10.0m; //руб. за 1км
+        public Delivery((string Country, string City, string Street, string NumberHome) address, decimal distance)    
+        {
+            Address = address;
+            Distance = distance;
+        }
 
+        public static DateTime DateDelivery { get; protected set; }  //формат вывода: год, день, месяц, час, минуты, секунды
+        //public string Client; - получить из класса IndividualClient
 
-
-        // Абстрактный метод для установки даты доставки.
         public abstract void SetDeliveryDate(DateTime deliveryDate);
-
 
 
         // Конструктор по умолчанию, который устанавливает текущую дату доставки.
@@ -41,10 +48,7 @@ namespace ClassSystemProject
             SetDeliveryDate(deliveryDate);
         }
 
-        public Delivery((string Country, string City, string Street, string NumberHome) Address, double Distance, string Client) { }
-
-
-
+        
         // Метод для проверки корректности даты доставки.
         protected void ValidateDeliveryDate(DateTime deliveryDate)
         {
@@ -53,17 +57,15 @@ namespace ClassSystemProject
                 throw new ArgumentOutOfRangeException("Некорректная дата доставки");
             }
         }
-         
-        // Метод расчета стоимости доставки (нет полей).
-        public abstract void СostСalculation();
 
-
-        //public Delivery(string Client, double Distance, string Address, double DateTimeDelivery)
-        //{
-        //    this.Client = Client;
-        //    this.Distance = Distance;
-        //    this.Address = Address;
-        //    this.DateTimeDelivery = DateTimeDelivery;
-        //}
+        // Метод расчета стоимости доставки.
+        public virtual decimal СostСalculation()
+        {
+            
+            decimal resultСostСalculation = _primeRate * Distance;
+            
+            return resultСostСalculation;
+        }
+       
     }
 }

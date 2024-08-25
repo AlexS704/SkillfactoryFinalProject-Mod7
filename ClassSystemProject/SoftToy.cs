@@ -20,17 +20,17 @@ namespace ClassSystemProject
         static Guid bullyDogID = Guid.NewGuid();
 
         //сохранение GUID в словаре
-       private Dictionary<SoftToys, Guid> softToysIds = new Dictionary<SoftToys, Guid>
-                {
-                    {SoftToys.CatAndGuitar, catAndGuitarID},
-                    {SoftToys.SailorCat, sailorCatID},
-                    {SoftToys.BullyDog, bullyDogID},
-                };
+       private Dictionary<SoftToysList, Guid> softToysIds = new Dictionary<SoftToysList, Guid>
+       {
+                    {SoftToysList.CatAndGuitar, catAndGuitarID},
+                    {SoftToysList.SailorCat, sailorCatID},
+                    {SoftToysList.BullyDog, bullyDogID},
+       };
 
 
         private void OutputID()
         {
-          //Guid selectedToyId = softToysIds[SoftToys.CatAndGuitar];
+          //Guid selectedToyId = softToysIds[SoftToysList.CatAndGuitar];
            
         }
         public int CheckAvailableQuantity (int quantity, int result)
@@ -46,7 +46,7 @@ namespace ClassSystemProject
 
     }
 
-    public enum SoftToys
+    public enum SoftToysList
     {
         CatAndGuitar,
         SailorCat,

@@ -11,15 +11,15 @@ namespace ClassSystemProject
     //Частный клиент
     public class IndividualClient
     {
-        private string _name;
-        private string _surname;
-        private int _age;
+                
+        internal (string _name, string _surname, byte _age) Client;
+        internal (string Country, string City, string Street, string NumberHome) Address;
 
-        public IndividualClient(string name, string surname, int age)
+        public IndividualClient(string name, string surname, byte age)
         {
 
-            _name = name;
-            _surname = surname;
+            Client._name = name;
+            Client._surname = surname;
 
             if (age < 18)
             {
@@ -27,9 +27,18 @@ namespace ClassSystemProject
             }
             else
             {
-                _age = age;
+                Client._age = age;
             }
+                      
+
         }
+
+        public IndividualClient(Address address)
+        {
+            Address = address.AddressClient;
+        }
+              
+        public IndividualClient() { }
 
         
 

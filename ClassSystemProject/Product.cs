@@ -14,7 +14,7 @@ namespace ClassSystemProject
         protected int IdProduct;
 
         protected string NameProduct;
-        protected decimal Price { get; private set; }
+        public decimal Price { get; private set; }
 
         protected string TypeProduct;
 

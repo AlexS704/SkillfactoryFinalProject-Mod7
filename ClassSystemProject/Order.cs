@@ -7,9 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ClassSystemProject
-{
-    //Заказ
-    public enum OrderStatus : byte
+{   
+    public enum OrderStatus
     {
         Accepted,
         InProgress,
@@ -22,23 +21,31 @@ namespace ClassSystemProject
     
     class Order<TDelivery> where TDelivery : Delivery
     {
+               
         public TDelivery Delivery { get; private set; }
 
         public int IdOrder { get; private set; }
 
-        //public string Description;
-
+        
         public (string Name, string Surname, byte AgeInYars) Client;
 
-       
+        public Order(IndividualClient individualClient)
+        {            
+            Client.Name = individualClient.Client._name;
+            Client.Surname = individualClient.Client._surname;
+            Client.AgeInYars = individualClient.Client._age;
+        }
+        
+        
+
         public List<Product> Products { get; private protected set; }
                        
         public OrderStatus Status { get; private set; }
 
-        public void DisplayAddress()
-        {
-            Console.WriteLine(Delivery.Address);
-        }
+        //public void DisplayAddress()
+        //{
+        //    Console.WriteLine(Delivery.Address);
+        //}
 
         private Order()
         {
@@ -60,6 +67,8 @@ namespace ClassSystemProject
             }
             return totalPrice;
         }
+
+        
 
         
     }

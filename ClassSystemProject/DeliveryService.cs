@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace ClassSystemProject
 {
-    public class DeliveryService<T> : object
+    public abstract class DeliveryService
     {
-        public void Deliver(T delivery)
-        {
-            //реализация метода доставки
-        }
+        public abstract decimal СostСalculation();
+        public abstract DateTime EstimateDeliveryDate();
+        public abstract bool IsAvailable();
 
     }
 

@@ -15,13 +15,16 @@ namespace ClassSystemProject
 
         //расчет расхода на доставку автотранспортом на 1 км пути.
         //4 - коэффициент по стандартам на затрату расходов ГСМ и ремонт подвески + время на перевозку.
-
-        
+        public override void SetDeliveryDate(DateTime deliveryDate)
+        {
+            ValidateDeliveryDate(deliveryDate);
+            DateDelivery = deliveryDate;
+        }
 
         private static (string bicycleСourier, string footСourier, string transportDelivery, string deliveryByAir, string selfDelivery) _typeDelevery;
 
 
-        public override double СostСalculation(string typeDelevery)
+        public double СostСalculation(string typeDelevery)
         {
             double costOfTheMile;
 
