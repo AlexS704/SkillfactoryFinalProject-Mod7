@@ -10,34 +10,7 @@ namespace ClassSystemProject
     //Доставка на дом
     class HomeDelivery : Delivery
     {
-        //перенести в класс IndividualClient либо связать с классом
-        string Name = "Иван";
-        string Surname = "Иванов";
-        int age = 18;
-
-        public int Age
-        {
-            get
-            {
-                return age;
-            }
-
-            set
-            {
-                if (value < 18)
-
-                {
-                    Console.WriteLine("Для оформления доставки вам должно быть не меньше 18 лет");
-                }
-
-                else
-                {
-                    age = value;
-                }
-            }
-
-        }
-
+       
         private readonly decimal _homeDeliveryFee;
 
         public HomeDelivery(decimal homeDeliveryFee)
@@ -73,18 +46,9 @@ namespace ClassSystemProject
             Address.NumberHome = numberHouse;
                         
         }
+               
 
         
-
-        public HomeDelivery(string name, string surname, int age) 
-        {
-            name = Name;
-            surname = Surname;
-            
-        }
-     
-        
-
 
     }
 }

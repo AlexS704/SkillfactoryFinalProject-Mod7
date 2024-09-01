@@ -33,7 +33,9 @@ namespace ClassSystemProject
 
         }
 
-        public IndividualClient(Address address)
+        //Address Address = new Address();
+
+        private IndividualClient(Address address)
         {
             Address = address.AddressClient;
         }

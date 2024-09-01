@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ClassSystemProject
 {
     //Пункт доставки
-    class PointDelivery : Delivery
+    class PointDelivery : DeliveryService
     {
         /* ... */
     }

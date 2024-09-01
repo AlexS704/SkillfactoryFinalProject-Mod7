@@ -9,47 +9,65 @@ namespace ClassSystemProject
     //Мягкая игрушка
     internal class SoftToy : Product
     {
-              
-        private int QuantityCatAndGuitar = 12;
-        private int QuantitySailorCat = 16;
-        private int QuantityBullyDog = 9;
-        
-        //генерация GUID
-        static Guid catAndGuitarID = Guid.NewGuid();
-        static Guid sailorCatID = Guid.NewGuid();
-        static Guid bullyDogID = Guid.NewGuid();
+        public int CurrentSoftToyQuantity { get; set; }
 
-        //сохранение GUID в словаре
-       private Dictionary<SoftToysList, Guid> softToysIds = new Dictionary<SoftToysList, Guid>
-       {
-                    {SoftToysList.CatAndGuitar, catAndGuitarID},
-                    {SoftToysList.SailorCat, sailorCatID},
-                    {SoftToysList.BullyDog, bullyDogID},
-       };
+        private Dictionary<Product, int> quantities = new Dictionary<Product, int>();
 
-
-        private void OutputID()
+        public void AddProduct(Product product, int quantity)
         {
-          //Guid selectedToyId = softToysIds[SoftToysList.CatAndGuitar];
-           
-        }
-        public int CheckAvailableQuantity (int quantity, int result)
-        {
-            bool CheckQuantity;
-
-            //реализация
-           
-            return result;
+            if (product.SoftToyType != null)
+            {
+                quantities[product] = quantity;
+            }
+            else
+            {
+                throw new ArgumentException("Product must have a soft toy type.");
+            }
         }
 
-        
+        public int GetQuantity(Product product)
+        {
+            if (quantities.ContainsKey(product))
+            {
+                return quantities[product];
+            }
+            else return 0;
+        }
 
-    }
+        public static Dictionary<string, Guid> GenerateIDForSoftToyType(Type SoftToyYype)
+        {
+            if (!SoftToyYype.IsEnum)
+            {
+                throw new ArgumentException("Type must be an enumeration.");
+            }
 
-    public enum SoftToysList
-    {
-        CatAndGuitar,
-        SailorCat,
-        BullyDog
+            var dictionarySoftToy = new Dictionary<string, Guid>();
+
+            foreach (var value in Enum.GetValues(SoftToyYype))
+            {
+                string name = Enum.GetName(SoftToyYype, value.ToString());
+
+                Guid id = Guid.NewGuid();
+
+                dictionarySoftToy[name] = id;
+            }
+
+            return dictionarySoftToy;
+        }
+
+        public SoftToy(int quantity, int currentSoftToyQuantity)
+        {
+            Quantity = quantity;
+            CurrentSoftToyQuantity = currentSoftToyQuantity;
+        }
+
+        public bool CheckAvailableQuantity(int CurrentSoftToyQuantity, int Quantity)
+        {
+            if (CurrentSoftToyQuantity < Quantity) { return false; }
+            else { return true; }
+
+        }
+
+
     }
 }

@@ -12,13 +12,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ClassSystemProject
 {
-    enum TypeDelivery
-    {
-        HomeDelivery,
-        PointDelivery,
-        MarketplaceDelivery
-    }
-    
+        
     public abstract class Delivery
     {
         public (string Country, string City, string Street, string NumberHome) Address;
@@ -31,7 +25,7 @@ namespace ClassSystemProject
         }
 
         public static DateTime DateDelivery { get; protected set; }  //формат вывода: год, день, месяц, час, минуты, секунды
-        //public string Client; - получить из класса IndividualClient
+        
 
         public abstract void SetDeliveryDate(DateTime deliveryDate);
 
@@ -60,8 +54,7 @@ namespace ClassSystemProject
 
         // Метод расчета стоимости доставки.
         public virtual decimal СostСalculation()
-        {
-            
+        {            
             decimal resultСostСalculation = _primeRate * Distance;
             
             return resultСostСalculation;

@@ -41,11 +41,7 @@ namespace ClassSystemProject
         public List<Product> Products { get; private protected set; }
                        
         public OrderStatus Status { get; private set; }
-
-        //public void DisplayAddress()
-        //{
-        //    Console.WriteLine(Delivery.Address);
-        //}
+           
 
         private Order()
         {

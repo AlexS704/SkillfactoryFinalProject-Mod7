@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassSystemProject
 {
-    public abstract class DeliveryService
+    public abstract class DeliveryService <T>
     {
         public abstract decimal СostСalculation();
         public abstract DateTime EstimateDeliveryDate();
