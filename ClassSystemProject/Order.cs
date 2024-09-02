@@ -54,9 +54,9 @@ namespace ClassSystemProject
 
         public List<Product> GetProducts() {  return Products; }
 
-        public decimal CalculateTotalPrice()
+        public double CalculateTotalPrice()
         {
-            decimal totalPrice = 0m;
+            double totalPrice = 0.0;
             foreach (var product in Products)
             {
                 totalPrice += product.Price;

@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,24 +12,22 @@ namespace ClassSystemProject
 {
     //Клиент - организация
     internal class OrganizationClient : Delivery
-    {
-        private string _name;     
+    {    
         
+        private byte _organizationCode;
+        private int _individualTaxNumber;
 
-        public OrganizationClient(string name, string country, string city, string street, string numberHouse) : base(country, city, street, numberHouse)   
+        public OrganizationClient(byte OrganizationCode, (string Country, string City, string Street, string NumberHome) address, decimal distance, int IndividualTaxNumber) : base(address, distance)
         {
-
-            _name = name;
-            
+            _organizationCode = OrganizationCode;
+            _individualTaxNumber = IndividualTaxNumber;
         }
 
-        
-        //!!!
-        public override (string _country, string _city, string _street, string _houseNumber) GetAddress()
+        public override void SetDeliveryDate(DateTime deliveryDate)
         {
-         
-            (string _country, string _city, string _houseNumber) _address;
-
+            DateDelivery = deliveryDate;
         }
+
+
     }
 }

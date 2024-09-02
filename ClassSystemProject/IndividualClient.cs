@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace ClassSystemProject
 {
     //Частный клиент
-    public class IndividualClient
+    public class IndividualClient : Delivery
     {
                 
         internal (string _name, string _surname, byte _age) Client;
@@ -28,21 +28,19 @@ namespace ClassSystemProject
             else
             {
                 Client._age = age;
-            }
-                      
+            }                     
 
         }
 
-        //Address Address = new Address();
-
-        private IndividualClient(Address address)
+        public IndividualClient((string Country, string City, string Street, string NumberHome) address, decimal distance) : base(address, distance)
         {
-            Address = address.AddressClient;
+            Address = address;
         }
-              
-        public IndividualClient() { }
 
-        
+        public override void SetDeliveryDate(DateTime deliveryDate)
+        {
+            DateDelivery = deliveryDate;
+        }
 
     }
 }
