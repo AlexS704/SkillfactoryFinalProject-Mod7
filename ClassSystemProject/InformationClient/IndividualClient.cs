@@ -2,6 +2,8 @@
 //Класс для представления индивидуального клиента, который делает заказ.
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,11 +11,11 @@ using System.Threading.Tasks;
 namespace ClassSystemProject
 {
     //Частный клиент
-    public class IndividualClient : Delivery
+    public class IndividualClient
     {
-                
+
         internal (string _name, string _surname, byte _age) Client;
-        internal (string Country, string City, string Street, string NumberHome) Address;
+        Address address;
 
         public IndividualClient(string name, string surname, byte age)
         {
@@ -28,19 +30,15 @@ namespace ClassSystemProject
             else
             {
                 Client._age = age;
-            }                     
-
+            }
         }
-
-        public IndividualClient((string Country, string City, string Street, string NumberHome) address, decimal distance) : base(address, distance)
+        public IndividualClient()
         {
-            Address = address;
+           address = new Address();                                  
         }
 
-        public override void SetDeliveryDate(DateTime deliveryDate)
-        {
-            DateDelivery = deliveryDate;
-        }
+        
+
 
     }
 }

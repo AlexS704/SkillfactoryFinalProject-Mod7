@@ -11,14 +11,14 @@ namespace ClassSystemProject
     //Продукт
     abstract class Product
     {
-        protected int IdProduct {get; set;}
-        protected string NameProduct { get; set;}
-        internal int Quantity {  get; set;}
+        protected int IdProduct { get; set; }
+        protected string NameProduct { get; set; }
+        internal int Quantity { get; set; }
         public double Price { get; private set; }
-        public ConfectionerysType ConfectionerysType {  get; set; }
+        public ConfectionerysType ConfectionerysType { get; set; }
         public SoftToysType SoftToyType { get; set; }
-        
-        
+
+
 
     }
 
@@ -41,4 +41,3 @@ namespace ClassSystemProject
 
 
 }
- 

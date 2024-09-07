@@ -9,6 +9,6 @@ namespace ClassSystemProject
     //Доставка грузовым автомобилем
     internal class TruckingCompanyDelivery : Delivery
     {
-
+        //Реализация
     }
 }

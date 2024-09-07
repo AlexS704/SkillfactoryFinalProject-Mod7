@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 namespace ClassSystemProject
 {
     //Кондитерские изделия
-       
+
     internal class Confectionery : Product
     {
         public int CurrentConfectioneryQuantity { get; set; }
-        
+
         //создаем связь продукт-количество
         private Dictionary<Product, int> quantities = new Dictionary<Product, int>();
 
@@ -35,8 +35,8 @@ namespace ClassSystemProject
                 return quantities[product];
             }
             else return 0;
-        }          
-                
+        }
+
         //метод перебирает элементы перечисления, генерирует ID для каждого, добавляет в словарь и возвращает его
         public static Dictionary<string, Guid> GenerateIDForConfectionerysType(Type ConfectionerysType)
         {
@@ -47,14 +47,14 @@ namespace ClassSystemProject
 
             var dictionaryConfectionery = new Dictionary<string, Guid>();
 
-            
-            foreach (var value  in Enum.GetValues(ConfectionerysType))
+
+            foreach (var value in Enum.GetValues(ConfectionerysType))
             {
-                
+
                 string name = Enum.GetName(ConfectionerysType, value.ToString);
-                
-                Guid id = Guid.NewGuid();                
-                
+
+                Guid id = Guid.NewGuid();
+
                 dictionaryConfectionery[name] = id;
             }
 
@@ -71,12 +71,12 @@ namespace ClassSystemProject
         //метод для проверки достумного количества типа кондитерского изделия
         public bool CheckAvailableQuantity(int CurrentConfectioneryQuantity, int Quantity)
         {
-            if (CurrentConfectioneryQuantity > Quantity) {  return false; }
-            else { return true; }            
-                       
+            if (CurrentConfectioneryQuantity > Quantity) { return false; }
+            else { return true; }
+
         }
 
     }
 
-    
+
 }

@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace ClassSystemProject
 {
-    //Доставка в маркетплейс
-    class MarketplaceDelivery : Delivery
+    //Пункт доставки
+    class PointDelivery : DeliveryService<Delivery>
     {
-        /* ... */
+
+        //Реализация
+
+
     }
 }

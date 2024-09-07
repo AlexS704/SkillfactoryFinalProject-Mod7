@@ -6,8 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ClassSystemProject
-{   
+{
     public enum OrderStatus
     {
         Accepted,
@@ -18,30 +19,31 @@ namespace ClassSystemProject
         Pending,
         ReturnOrder
     }
-    
+
     class Order<TDelivery> where TDelivery : Delivery
     {
-               
+
         public TDelivery Delivery { get; private set; }
 
-        public int IdOrder { get; private set; }
 
-        
+        public int Id { get; set; }
+
+
         public (string Name, string Surname, byte AgeInYars) Client;
 
         public Order(IndividualClient individualClient)
-        {            
+        {
             Client.Name = individualClient.Client._name;
             Client.Surname = individualClient.Client._surname;
             Client.AgeInYars = individualClient.Client._age;
         }
-        
-        
+
+
 
         public List<Product> Products { get; private protected set; }
-                       
+
         public OrderStatus Status { get; private set; }
-           
+
 
         private Order()
         {
@@ -52,7 +54,7 @@ namespace ClassSystemProject
 
         public bool RemoveProduct(Product product) { return Products.Remove(product); }
 
-        public List<Product> GetProducts() {  return Products; }
+        public List<Product> GetProducts() { return Products; }
 
         public double CalculateTotalPrice()
         {
@@ -64,8 +66,8 @@ namespace ClassSystemProject
             return totalPrice;
         }
 
-        
 
-        
+
+
     }
 }

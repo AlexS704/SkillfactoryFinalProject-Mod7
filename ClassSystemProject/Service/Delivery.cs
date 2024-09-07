@@ -12,20 +12,23 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ClassSystemProject
 {
-        
+
     public abstract class Delivery
     {
-        public (string Country, string City, string Street, string NumberHome) Address;
-        public decimal Distance; //в км             
-        private decimal _primeRate = 10.0m; //руб. за 1км
-        public Delivery((string Country, string City, string Street, string NumberHome) address, decimal distance)    
+        protected readonly (string Country, string City, string Street, string NumberHome) _address;
+        internal readonly decimal _distance; //в км             
+        protected decimal _primeRate = 10.0m; //руб. за 1км
+        internal DateTime DateDelivery;  //формат вывода: год, день, месяц, час, минуты, секунды
+        public Delivery((string Country, string City, string Street, string NumberHome) address, decimal distance, decimal primeRate)
         {
-            Address = address;
-            Distance = distance;
+            _address = address;
+            _distance = distance;
+            _primeRate = primeRate;
+            DateDelivery = DateTime.Now;
         }
 
-        public static DateTime DateDelivery { get; protected set; }  //формат вывода: год, день, месяц, час, минуты, секунды
-        
+
+
 
         public abstract void SetDeliveryDate(DateTime deliveryDate);
 
@@ -42,7 +45,7 @@ namespace ClassSystemProject
             SetDeliveryDate(deliveryDate);
         }
 
-        
+
         // Метод для проверки корректности даты доставки.
         protected void ValidateDeliveryDate(DateTime deliveryDate)
         {
@@ -54,11 +57,11 @@ namespace ClassSystemProject
 
         // Метод расчета стоимости доставки.
         public virtual decimal СostСalculation()
-        {            
-            decimal resultСostСalculation = _primeRate * Distance;
-            
+        {
+            decimal resultСostСalculation = _primeRate * _distance;
+
             return resultСostСalculation;
         }
-       
+
     }
 }

@@ -23,8 +23,13 @@ namespace ClassSystemProject
             AddressClient._houseNumber = houseNumber;
         }
 
-                
-        
+        public Address()
+        {
+
+        }
+
+
+
     }
-        
+
 }

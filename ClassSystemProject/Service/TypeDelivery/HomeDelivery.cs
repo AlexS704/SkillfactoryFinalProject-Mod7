@@ -10,18 +10,19 @@ namespace ClassSystemProject
     //Доставка на дом
     class HomeDelivery : Delivery
     {
-       
+
         private readonly decimal _homeDeliveryFee;
+        internal (string Country, string City, string Street, string HouseNumber) Address;
 
         public HomeDelivery(decimal homeDeliveryFee)
         {
             _homeDeliveryFee = homeDeliveryFee;
         }
 
-     
+
         public override decimal СostСalculation()
         {
-          
+
             return base.СostСalculation() + _homeDeliveryFee;
         }
 
@@ -32,23 +33,22 @@ namespace ClassSystemProject
         }
 
 
-        
+
         //Вызываем конструкторы базового класса
         public HomeDelivery() : base(DateTime.Now) { }
 
         public HomeDelivery(DateTime DateDelivery) : base(DateDelivery) { }
 
-        public HomeDelivery(string country, string city, string street, string numberHouse) : base(DateDelivery)
-        {            
-            Address.Country = country;
-            Address.City = city;
-            Address.Street = street;
-            Address.NumberHome = numberHouse;
-                        
-        }
-               
+        public HomeDelivery((string Country, string City, string Street, string HouseNumber) address, decimal distance, decimal primeRate) : base(address, distance, primeRate)
+        {
+            Address = address;
 
-        
+        }
+
+
+
+
+
 
     }
 }
